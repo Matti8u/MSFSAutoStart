@@ -1,0 +1,50 @@
+﻿<Window x:Class="MSFSAutoStart.GlobalSettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Settings" Height="200" Width="600"
+        ResizeMode="NoResize">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Community Folder -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,0,10">
+            <Label Content="Community Folder:" Width="120" VerticalAlignment="Center"/>
+            <TextBox x:Name="CommunityFolderTextBox" Width="375" IsReadOnly="True" Focusable="False"/>
+            <Button Content="Browse" Click="BrowseCommunityFolder_Click" Width="50" Margin="5,0,0,0" />
+        </StackPanel>
+
+        <!-- AutoStart -->
+        <CheckBox Grid.Row="1" x:Name="AutoStartCheckBox" Content="Enable Master Auto Start" Margin="0,0,0,10">
+            <CheckBox.ToolTip>
+                <ToolTip>
+                    <TextBlock>
+                Automatically start the programs you have specified when MSFS runs.
+                    </TextBlock>
+                </ToolTip>
+            </CheckBox.ToolTip>
+        </CheckBox>
+        <!-- AutoStop
+        <CheckBox Grid.Row="2" x:Name="AutoStopCheckBox" Content="Enable Master Auto Close (Hover for Info)" Margin="0,0,0,10">
+            <CheckBox.ToolTip>
+                <ToolTip>
+                    <TextBlock>
+                Automatically close the programs you have specified when MSFS closes.<LineBreak/>
+                NOTE: This program will run in the backround while MSFS is open!
+                    </TextBlock>
+                </ToolTip>
+            </CheckBox.ToolTip>
+        </CheckBox>-->
+
+        <!-- Buttons (OK/Cancel) -->
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Width="75" Margin="5" Click="OK_Click">OK</Button>
+            <Button Width="75" Margin="5" Click="Cancel_Click">Cancel</Button>
+        </StackPanel>
+    </Grid>
+</Window>
